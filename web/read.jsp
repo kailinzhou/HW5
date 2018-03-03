@@ -8,7 +8,8 @@
     </head>
     <% String table=(String) request.getAttribute("table");%>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Country Database</h1>
+        <p>CountryID/Counry/Population/Region/Language</p>
         <%=table %>
     </body>
 </html>
