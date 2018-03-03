@@ -53,7 +53,7 @@ public class ReadQuery {
     }
     public void doRead(){
         try {
-            String query="Select * from friends";
+            String query="Select * from Countries";
             PreparedStatement ps=conn.prepareStatement(query);
             this.results=ps.executeQuery();
         } catch (SQLException ex) {
@@ -76,14 +76,19 @@ public class ReadQuery {
                 table+="<td>";
                 table+= country.getCountryID();
                 table+="</td>";
+                
                 table+="<td>";
                 table+= country.getCountryName();
                 table+="</td>";
+                
                 table+="<td>";
                 table+= country.getPopulation();
-                table+="</td>";   table+="<td>";
+                table+="</td>";   
+                
+                table+="<td>";
                 table+= country.getRegion();
                 table+="</td>";
+                
                 table+="<td>";
                 table+= country.getCountryLanguage();
                 table+="</td>";

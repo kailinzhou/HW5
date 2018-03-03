@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Mar 2, 2018, 5:26:57 PM
-    Author     : kzhou8
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
