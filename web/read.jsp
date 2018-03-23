@@ -11,5 +11,7 @@
         <h1>Country Database</h1>
         <p>CountryID/Counry/Population/Region/Language</p>
         <%=table %>
-    </body>
+        <br><br>
+        <a href="add">Add A New Country</a>
+        </body>
 </html>
