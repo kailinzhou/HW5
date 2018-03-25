@@ -14,27 +14,25 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Countries;
-import sun.util.logging.PlatformLogger;
 
 /**
  *
  * @author kzhou8
  */
-public class AddQuery {
+public class DeleteQuery {
     private Connection conn;
-    public AddQuery(){
-        Properties props= new Properties();
-        InputStream instr= getClass().getResourceAsStream("dbConn.properties");
+    public DeleteQuery(){
+         Properties props= new Properties();
+    InputStream instr= getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     String driver = props.getProperty("driver.name");
@@ -44,27 +42,22 @@ public class AddQuery {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn=DriverManager.getConnection(ur1,username,password);
         } catch (SQLException ex) {
-            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
-}
-    
-    public void doAdd(Countries country){
-        try {
-            String query="INSERT INTO countries(countryname,population,region,countryLanguage) Values(?,?,?,?)";
-            PreparedStatement ps=conn.prepareStatement(query);
-            ps.setString(1,country.getCountryName());
-            ps.setInt(2, country.getPopulation());
-            ps.setString(3,country.getRegion());
-            ps.setString(4,country.getCountryLanguage()); 
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void doDelete(int countryID){
+        try {
+            String query="DELETE FROM countries where countryid=?";
+            PreparedStatement ps=conn.prepareStatement(query);
+            ps.setInt(1,countryID);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }
 }

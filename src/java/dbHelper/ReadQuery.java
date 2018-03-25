@@ -62,7 +62,7 @@ public class ReadQuery {
     }
     public String getHTMLTable(){
         String table="";
-        table+="<table border=1>";
+        table+="<table>";
         try {
             while(this.results.next()){
                 Countries country=new Countries();
@@ -93,6 +93,9 @@ public class ReadQuery {
                 table+= country.getCountryLanguage();
                 table+="</td>";
                 
+                table+="<td>";
+                table+="<a href=delete?countryID="+country.getCountryID()+">Delete</a>";
+                table+="</td>";
                 table+="</tr>";
                 
             }

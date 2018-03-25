@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Add A New Country</h1>
-        <form name="addForm" action="addCountry" method="get">
+        <form name="addForm" action="addCountry" method="get"> 
             <label>Country Name:</label>
             <input type="text" name="name" value="" />
             <br>
