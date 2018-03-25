@@ -9,9 +9,10 @@
     </head>
     <% String table=(String) request.getAttribute("table");%>
     <body>
-        <div class="readtable" style="text-aligh:center">
+       <div class="database"style="text-aligh:center">
         <h1>My Country Database</h1>
-        <table id="t1">
+         <hr>
+        <table id="header">
             <tr>
                 <th>Country ID</th>
 
@@ -22,16 +23,16 @@
                 <th>Region</th>
 
                 <th>Language</th>
-        
-                <th> Delete it?</th>
+                <th> Delete</th>
             </tr>
         </table>
-        <table id="table2">  
-         <tr>
-         <th><%=table %></th>
-        </tr>
+        <table id="data">  
+        <%=table %>
         </table>
         <br><br>
+        <div class="add">
         <a href="add">Add A New Country</a>
-        </body>
+        </div>
+       </div>
+        </body>   
 </html>

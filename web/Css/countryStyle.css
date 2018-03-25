@@ -1,27 +1,29 @@
 body{background-color:#D2B48C;}
-
-.addinfo{
+h1{color:#696969}
+.add{
     border: solid 2px black;
     text-align: center;
     background: #F08080;
     color:black;
-    font-size: .8em;
+    font-size: large;
     width:300px;
     padding:30px;
     margin-top:5px;
+    margin-left:325px;
     margin-bottom: 5px;
     display: white;
 }
 
-.readtable{
+.database{
+    padding:30px;
+    margin-top:150px;
+    margin-left:325px;
     border: solid 2px black;
     text-align: center;
     background: #FFFFFF;
     color:#696969;
     font-size: .8em;
-    width:800px;
-    padding:30px;
-    margin-top:5px;
+    width:1000px;;
     margin-bottom: 5px;
     display: white;
 }
@@ -42,7 +44,9 @@ th{
     hight:500px;
     text-align: left;
 }
-
+label{
+  font-size: large;  
+}
 tr:hover{
     background-color: #CCCCCC;
 }
@@ -51,19 +55,10 @@ tr:nth-child(even){
     background-color: #EDEDED;
 }
 
-table#t2{
-    background-color: #FFFF99;
-}
-table#t1{
+table#data{
     background-color: #F08080;
 }
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Mar 25, 2018, 2:54:45 PM
-    Author     : kzhou8
-*/
+table#header{
+    background-color: #FFFF99;
+}
 
